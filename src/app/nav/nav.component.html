@@ -1,0 +1,41 @@
+<mat-toolbar class="custom-toolbar mat-elevation-z8">
+
+  <div class="toolbar-title">
+    <h1>Proyecto Demo</h1>
+  </div>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer mode="side" position="start" opened="true">
+    <mat-nav-list>
+      
+      <!-- Agrega más elementos de lista según sea necesario -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+         Introduccion
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <button routerLink="/actividad1" mat-button>
+            Actividad No. 1
+          </button>
+        </mat-panel-description>
+        <mat-panel-description>
+          <button routerLink="/actividad2" mat-button>
+            Actividad No. 2
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel>
+      <mat-list-item>
+        <button routerLink="card" mat-button>
+          Explicacion
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

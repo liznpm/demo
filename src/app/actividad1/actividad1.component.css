@@ -1,0 +1,19 @@
+
+    .concept {
+      border: 4px solid #005883;
+      position: relative;
+      margin-bottom: 20px; /* Añade espacio entre los bloques */
+
+    }
+  
+  
+    .line {
+      width: 2px;
+      height: 100px;
+      background-color: #005883;
+      position: absolute;
+      left: calc(50% - 1px);
+      top: -110px;
+      z-index: -2;
+    }
+

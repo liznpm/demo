@@ -1,0 +1,85 @@
+
+
+
+
+
+
+<h1>Conjunto de Preguntas</h1>
+
+
+  <div class="question">
+    <p>1. ¿Cuál es la capital de Francia?</p>
+    <ul class="options">
+      <li><input type="radio" name="q1" value="incorrect"> Madrid</li>
+      <li><input type="radio" name="q1" value="incorrect"> Berlín</li>
+      <li><input type="radio" name="q1" value="correct"> París</li>
+      <li><input type="radio" name="q1" value="incorrect"> Roma</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <p>2. ¿Cuál es el río más largo del mundo?</p>
+    <ul class="options">
+      <li><input type="radio" name="q2" value="incorrect"> Amazonas</li>
+      <li><input type="radio" name="q2" value="incorrect"> Nilo</li>
+      <li><input type="radio" name="q2" value="incorrect"> Yangtsé</li>
+      <li><input type="radio" name="q2" value="correct"> Misisipi</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <p>3. ¿Cuál es el elemento químico con símbolo Hg?</p>
+    <ul class="options">
+      <li><input type="radio" name="q3" value="correct"> Mercurio</li>
+      <li><input type="radio" name="q3" value="incorrect"> Hierro</li>
+      <li><input type="radio" name="q3" value="incorrect"> Hidrógeno</li>
+      <li><input type="radio" name="q3" value="incorrect"> Helio</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <p>4. ¿En qué año se fundó la ONU?</p>
+    <ul class="options">
+      <li><input type="radio" name="q4" value="incorrect"> 1945</li>
+      <li><input type="radio" name="q4" value="incorrect"> 1950</li>
+      <li><input type="radio" name="q4" value="correct"> 1945</li>
+      <li><input type="radio" name="q4" value="incorrect"> 1960</li>
+    </ul>
+  </div>
+
+  <div class="question">
+    <p>5. ¿Cuál es el planeta más grande del sistema solar?</p>
+    <ul class="options">
+      <li><input type="radio" name="q5" value="incorrect"> Tierra</li>
+      <li><input type="radio" name="q5" value="correct"> Júpiter</li>
+      <li><input type="radio" name="q5" value="incorrect"> Marte</li>
+      <li><input type="radio" name="q5" value="incorrect"> Venus</li>
+    </ul>
+  </div>
+
+  <button onclick="checkAnswers()">Revisar Respuestas</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function checkAnswers() {
+      const questions = document.querySelectorAll('.question');
+      let correctCount = 0;
+
+      questions.forEach(question => {
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+
+        if (selectedOption && selectedOption.value === "correct") {
+          correctCount++;
+          question.classList.add('correct');
+          question.classList.remove('incorrect');
+        } else {
+          question.classList.add('incorrect');
+          question.classList.remove('correct');
+        }
+      });
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = `Respuestas correctas: ${correctCount} de ${questions.length}`;
+    }
+  </script>

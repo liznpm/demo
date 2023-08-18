@@ -1,0 +1,35 @@
+body {
+      font-family: Arial, sans-serif;
+      animation: moveContent 5s infinite alternate; /* Aplica la animación */
+    }
+
+    @keyframes moveContent {
+      from {
+        transform: translateX(-5px); /* Mueve a la izquierda */
+      }
+      to {
+        transform: translateX(5px); /* Mueve a la derecha */
+      }
+    }
+
+    /* Resto de tus estilos */
+    .question {
+      margin-bottom: 10px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 5px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
